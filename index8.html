@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <button id="toggleBtn">Показати/Сховати</button>
+    
+    <p id="text">Я текст, який вміє зникати!</p>
+    <p>Я звичайний текст, я нікуди не піду.</p>
+
+    <script>
+        const btn = document.getElementById('toggleBtn');
+        const targetText = document.getElementById('text');
+
+        btn.addEventListener('click', () => {
+            targetText.classList.toggle('hidden');
+
+            if (targetText.classList.contains('hidden')) {
+                btn.textContent = "Показати";
+            } else {
+                btn.textContent = "Сховати";
+            }
+});
+    </script>
+</body>
+</html>
