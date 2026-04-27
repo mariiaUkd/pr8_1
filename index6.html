@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    button { padding: 10px; cursor: pointer; }
+    p {
+        font-size: 24px;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<p id="text">Любий текст</p>
+<button id="colorBtn">Натисни</button>
+
+<script>
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    const textElement = document.getElementById('text');
+    const btn = document.getElementById('colorBtn');
+
+    btn.onclick = function() {
+        const randomBgColor = getRandomColor();
+        const randomTextColor = getRandomColor();
+
+        document.body.style.backgroundColor = randomBgColor;
+
+        textElement.style.color = randomTextColor;
+    };
+</script>
+
+</body>
+</html>
